@@ -20,6 +20,8 @@ SECTIONS
         _etext = .;
     } > FLASH
 
+    _ldata_ = LOADADDR(.data);
+
     .data :
     {
         . = ALIGN(4);
@@ -36,7 +38,7 @@ SECTIONS
         _edata = .;
     } > RAM AT > FLASH
 
-    _ldata_ = LOADADDR(.data);
+    
 
     .bss :
     {

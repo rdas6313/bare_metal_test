@@ -1,7 +1,8 @@
 # -I/usr/lib/gcc/arm-none-eabi/10.3.1/include -I/usr/lib/gcc/arm-none-eabi/10.3.1/include-fixed
 CC = arm-none-eabi-gcc
-CFLAGS = -c -mcpu=cortex-m3 -mthumb -g -std=gnu11
-LFLAGS = -Wl,-Map=final.map -Wall -g --specs=nano.specs
+CPU = cortex-m3
+CFLAGS = -c -mcpu=$(CPU) -mthumb -g -std=gnu11 -mfloat-abi=soft
+LFLAGS = -Wl,-Map=final.map -Wall -g --specs=nano.specs -mcpu=$(CPU) -mthumb -mfloat-abi=soft
 
 .PHONY: clear
 
