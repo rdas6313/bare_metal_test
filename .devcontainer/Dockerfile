@@ -10,7 +10,6 @@ ENV DEBIAN_FRONTEND=noninteractive
 RUN sudo apt-get update
 RUN sudo apt-get install --no-install-recommends -y \
   sudo \
-  binutils-common \
   make \
   git-core \
   wget \
@@ -23,6 +22,7 @@ RUN sudo apt-get install --no-install-recommends -y \
   make \
   qemu-system-arm \
   gcc-arm-none-eabi \
+  libnewlib-arm-none-eabi \
   gdb-multiarch
 
 # terminal colors with xterm
